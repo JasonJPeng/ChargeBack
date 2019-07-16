@@ -14,6 +14,7 @@ $_SESSION["POST"] = $_POST;
             <table id="example" class="display" style="width:100%">
                     <thead>
                         <tr>
+                            <th>Date Posted</th>
                             <th>ID</th>
                             <th>MID</th>
                             <th>Order ID</th>
@@ -25,6 +26,7 @@ $_SESSION["POST"] = $_POST;
                     </thead>
                     <tfoot>
                         <tr>
+                        <th>Date Posted</th>
                             <th>ID</th>
                             <th>MID</th>
                             <th>Order ID</th>

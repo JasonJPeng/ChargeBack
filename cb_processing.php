@@ -25,8 +25,9 @@ if ($conn->connect_error) {
 $tableName = "transactions";
  
 // The sequence is important
+// datatable header 
  $selectColumns = [
-     "id", "mid", "orderid", "cardfullname", "amount", "final_amount", "first_6", "last_4"
+    "created", "id", "mid", "orderid", "cardfullname", "amount", "final_amount", "first_6", "last_4"
  ];    
 
 // SQL: SELECT FROM 
