@@ -35,13 +35,17 @@ $tableName = "transactions";
 $strSelect = join(", ", $selectColumns);
  $searchTerms = [];
  
- foreach($arrPost as $k=>$v) {
-     $term = trim($v, " ");
-     if ($v) {
-         array_push($searchTerms, $k . " = " . $term );
-         
+ foreach($arrPost as $key=>$value) {
+     $term = trim($value, " ");
+     if ($term) {
+         if (substr($key, 0, 6) === "_LIKE_") {
+             array_push($searchTerms, substr($key, 6) . " LIKE " . " '%$term%' " );
+         } else {
+           array_push($searchTerms, $key . " = " . $term );
+         }
      } 
  }
+//  print_r($searchTerms);
  $strWhere = join(" and ", $searchTerms); 
  $strSql = "select $strSelect from $tableName where $strWhere";
  $result = $conn->query($strSql);
